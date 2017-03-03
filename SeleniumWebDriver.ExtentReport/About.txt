@@ -1,0 +1,40 @@
+﻿Projeto criado para estudos nível básico
+Dificuldade: intermediário
+
+Tecnologias escolhidas:
+- Linguagem C#
+- Framework .NET
+- Framework de testes automatizados: Selenium WebDriver
+- Framework de testes automatizados: NUnit
+- Padrão de escrita de código de testes: PageObjects
+- Padrão de melhorias em ações com try catch
+- Framework de report de execução de testes: ExtentReport
+
+Arquitetura do projeto:
+Classe filha -> Classe mãe herdada
+Classe de Teste -> WebDriver
+Classe de PageObject -> WebDriver
+
+Features:
+Melhorias e boas práticas
+Criação de métodos genéricos de ação em classes PageObjects
+Tratamento de exceções ao navegar ou realizar alguma ação na página web
+Inclusão do relatório de execução de testes com evidências passo a passo
+
+
+Para evitar problemas de exibição dos testes na tela Test Explorer pós build, instale o NuGet: NUnit3TestAdapter
+
+**************************
+Passo a passo do projeto
+**************************
+
+1. PageObjects
+Foi criado uma pasta para armazenar todas as classes que fazem referência á pageobjects
+
+2. Tests
+Foi criado uma pasta para armazenar todas as classes de testes
+
+3. Classe Tests - Criação de métodos para ações
+Toda ação, navegação no sistema terá um método vinculado dentro da classe PageObject para tratamento de exceções
+Try catch utilizado para tratar exceções
+
