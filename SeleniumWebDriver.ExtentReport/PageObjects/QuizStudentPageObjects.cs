@@ -66,21 +66,13 @@ namespace SeleniumWebDriver.Basics
         public IWebElement btnSubmit { get; set; }
 
 
-
-        /// <summary>
-        /// Método para inserir informação em campo
-        /// Tenta esoerar o elemento na tela
-        /// Limpa o campo
-        /// Envia informação
-        /// ERRO: não conseguiu fazer alguma das ações anteriores, o teste irá resultar em erro
-        /// </summary>
-        public void preencherName(string YourName)
+        #region   Ações questão 1
+        public void clicarQuestion1Radio1()
         {
             try
             {
-                SeleniumUteis.SeleniumUteis.esperarElemento(inputYourName);
-                inputYourName.Clear();
-                inputYourName.SendKeys(YourName);
+                SeleniumUteis.SeleniumUteis.esperarElemento(question1Radio1);
+                question1Radio1.Click();
             }
             catch
             {
@@ -89,13 +81,12 @@ namespace SeleniumWebDriver.Basics
         }//fim void
 
 
-
-        public void clicarContinue()
+        public void clicarQuestion1Radio2()
         {
             try
             {
-                SeleniumUteis.SeleniumUteis.esperarElemento(btnContinue);
-                btnContinue.Click();
+                SeleniumUteis.SeleniumUteis.esperarElemento(question1Radio2);
+                question1Radio2.Click();
             }
             catch
             {
@@ -104,5 +95,143 @@ namespace SeleniumWebDriver.Basics
         }//fim void
 
 
+        public void clicarQuestion1Radio3()
+        {
+            try
+            {
+                SeleniumUteis.SeleniumUteis.esperarElemento(question1Radio3);
+                question1Radio3.Click();
+            }
+            catch
+            {
+                Assert.Fail();
+            }
+        }//fim void
+
+
+        public void clicarQuestion1Radio4()
+        {
+            try
+            {
+                SeleniumUteis.SeleniumUteis.esperarElemento(question1Radio4);
+                question1Radio4.Click();
+            }
+            catch
+            {
+                Assert.Fail();
+            }
+        }//fim void
+        #endregion
+
+        #region Ações questão 2
+        public void clicarQuestion2Radio1()
+        {
+            try
+            {
+                SeleniumUteis.SeleniumUteis.esperarElemento(question2Radio1);
+                question2Radio1.Click();
+            }
+            catch
+            {
+                Assert.Fail();
+            }
+        }//fim void
+
+        public void clicarQuestion2Radio2()
+        {
+            try
+            {
+                SeleniumUteis.SeleniumUteis.esperarElemento(question2Radio2);
+                question2Radio2.Click();
+            }
+            catch
+            {
+                Assert.Fail();
+            }
+        }//fim void
+        #endregion
+
+        #region Ações questão 3
+        public void clicarQuestion3Check1()
+        {
+            try
+            {
+                SeleniumUteis.SeleniumUteis.esperarElemento(question3Check1);
+                question3Check1.Click();
+            }
+            catch
+            {
+                Assert.Fail();
+            }
+        }//fim void
+
+        public void clicarQuestion3Check2()
+        {
+            try
+            {
+                SeleniumUteis.SeleniumUteis.esperarElemento(question3Check2);
+                question3Check2.Click();
+            }
+            catch
+            {
+                Assert.Fail();
+            }
+        }//fim void
+
+        public void clicarQuestion3Check3()
+        {
+            try
+            {
+                SeleniumUteis.SeleniumUteis.esperarElemento(question3Check3);
+                question3Check3.Click();
+            }
+            catch
+            {
+                Assert.Fail();
+            }
+        }//fim void
+
+        public void clicarQuestion3Check4()
+        {
+            try
+            {
+                SeleniumUteis.SeleniumUteis.esperarElemento(question3Check4);
+                question3Check4.Click();
+            }
+            catch
+            {
+                Assert.Fail();
+            }
+        }//fim void
+        #endregion
+
+        #region Ações questão 4
+        public void preencherQuestion4Input(string valor)
+        {
+            try
+            {
+                SeleniumUteis.SeleniumUteis.esperarElemento(question4Input);
+                question4Input.Clear();
+                question4Input.SendKeys(valor);
+            }
+            catch
+            {
+                Assert.Fail();
+            }
+        }//fim void
+        #endregion
+
+        public void clicarSubmit()
+        {
+            try
+            {
+                SeleniumUteis.SeleniumUteis.esperarElemento(btnSubmit);
+                btnSubmit.Click();
+            }
+            catch
+            {
+                Assert.Fail();
+            }
+        }//fim void
     }
 }

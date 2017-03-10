@@ -65,6 +65,7 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="PageObjects\QuizStudentPageObjects.cs" />
     <Compile Include="PageObjects\StudentLoginPageObjects.cs" />
     <Compile Include="SeleniumUteis\SeleniumUteis.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

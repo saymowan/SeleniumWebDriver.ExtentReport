@@ -1,5 +1,6 @@
 ﻿using NUnit.Framework;
 using OpenQA.Selenium;
+using System.Threading;
 
 namespace SeleniumWebDriver.Basics
 {
@@ -40,5 +41,28 @@ namespace SeleniumWebDriver.Basics
             Assert.AreEqual("This quiz determines if you know anything about Testmoz.", driver.FindElement(By.Id("introduction")).Text);
         }
 
-    }
-}
+        /// <summary>
+        /// Método de teste para inserir valores na tela Quiz e avançar
+        /// </summary>
+        [Test]
+        public void preencherQuiz()
+        {
+            StudentLoginPageObjects login = new StudentLoginPageObjects();
+            login.preencherName("Teste Preencher Quiz");
+            login.clicarContinue();
+
+            Thread.Sleep(100);
+            //Escolher valores nas perguntas - página QUIZ
+            QuizStudentPageObjects quiz = new QuizStudentPageObjects();
+            quiz.clicarQuestion1Radio1();
+            quiz.clicarQuestion2Radio2();
+            quiz.clicarQuestion3Check2();
+            quiz.clicarQuestion3Check4();
+            quiz.preencherQuestion4Input("URL");
+
+            quiz.clicarSubmit();
+            Assert.AreEqual("Congrats. You're done. When you're done viewing this page, don't click the logout button. Click here instead to head back to the homepage.", driver.FindElement(By.Id("conclusion")).Text);
+
+        }//fim test
+    }//fim class
+}//fim namespace

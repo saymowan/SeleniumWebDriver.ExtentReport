@@ -39,3 +39,6 @@ Toda ação, navegação no sistema terá um método vinculado dentro da classe 
 Try catch utilizado para tratar exceções
 
 4. Criação de um novo teste
+Foi ccriado um mapeamento de pageobjects na tela Quiz.
+Foi criado um novo teste para clicar em radio buttons, checkbox e enviar um input na tela de quiz.
+Todos as opções de pergunta da tela Quiz tem método exclusivo para tratamento de erro de encontrar o elemento na tela na PageObject
