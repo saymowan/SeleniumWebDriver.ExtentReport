@@ -38,3 +38,4 @@ Foi criado uma pasta para armazenar todas as classes de testes
 Toda ação, navegação no sistema terá um método vinculado dentro da classe PageObject para tratamento de exceções
 Try catch utilizado para tratar exceções
 
+4. Criação de um novo teste

@@ -7,6 +7,8 @@ namespace SeleniumWebDriver.Basics
     public class Tests : WebDriver
     {
 
+
+
         /// <summary>
         /// Método de teste usa decoração [Test]: após build será exibido no menu "Test Explorer"
         /// Todo método de teste tem um assert para validar o resultado esperado
