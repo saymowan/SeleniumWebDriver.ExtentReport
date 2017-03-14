@@ -1,14 +1,13 @@
 ﻿using NUnit.Framework;
 using OpenQA.Selenium;
+using SeleniumWebDriver.ExtentReport.SeleniumUteis;
 using System.Threading;
 
-namespace SeleniumWebDriver.Basics
+namespace SeleniumWebDriver.ExtentReport
 {
     //Modificar de acesso public
     public class Tests : WebDriver
     {
-
-
 
         /// <summary>
         /// Método de teste usa decoração [Test]: após build será exibido no menu "Test Explorer"
@@ -28,7 +27,7 @@ namespace SeleniumWebDriver.Basics
         [Test]
         public void acessarQuizTestMoz()
         {
-            StudentLoginPageObjects studentLogin = new StudentLoginPageObjects();
+            StudentLoginPageObjects studentLogin = new StudentLoginPageObjects(Relatorio);
 
             //Inserir um valor em campo inpuut: limpe o campo e envie a string/valor
             studentLogin.preencherName("Nome teste quiz");
@@ -47,13 +46,16 @@ namespace SeleniumWebDriver.Basics
         [Test]
         public void preencherQuiz()
         {
-            StudentLoginPageObjects login = new StudentLoginPageObjects();
+            //Iniciar a gravação no relatório
+            Relatorio.iniciarTeste("Teste preenchimento de quiz");
+
+            StudentLoginPageObjects login = new StudentLoginPageObjects(Relatorio);
             login.preencherName("Teste Preencher Quiz");
             login.clicarContinue();
 
             Thread.Sleep(100);
             //Escolher valores nas perguntas - página QUIZ
-            QuizStudentPageObjects quiz = new QuizStudentPageObjects();
+            QuizStudentPageObjects quiz = new QuizStudentPageObjects(Relatorio);
             quiz.clicarQuestion1Radio1();
             quiz.clicarQuestion2Radio2();
             quiz.clicarQuestion3Check2();
@@ -61,8 +63,15 @@ namespace SeleniumWebDriver.Basics
             quiz.preencherQuestion4Input("URL");
 
             quiz.clicarSubmit();
-            Assert.AreEqual("Congrats. You're done. When you're done viewing this page, don't click the logout button. Click here instead to head back to the homepage.", driver.FindElement(By.Id("conclusion")).Text);
 
+            QuizResultPageObjects quizResult = new QuizResultPageObjects(Relatorio);
+            quizResult.validaQuizResult();
+          
         }//fim test
+
+
+
+
+
     }//fim class
 }//fim namespace

@@ -1,4 +1,4 @@
-﻿Projeto criado para estudos nível básico
+﻿Projeto criado para estudos nível intermediário
 Dificuldade: intermediário
 
 Tecnologias escolhidas:
@@ -14,6 +14,8 @@ Arquitetura do projeto:
 Classe filha -> Classe mãe herdada
 Classe de Teste -> WebDriver
 Classe de PageObject -> WebDriver
+Classe Selenium Uteis: métodos genéricos
+Classe Selenium Constantes: parâmetros do projeto
 
 Features:
 Melhorias e boas práticas
@@ -22,7 +24,9 @@ Tratamento de exceções ao navegar ou realizar alguma ação na página web
 Inclusão do relatório de execução de testes com evidências passo a passo
 
 
+Pré-requisitos:
 Para evitar problemas de exibição dos testes na tela Test Explorer pós build, instale o NuGet: NUnit3TestAdapter
+Crie no diretório físico "C" a pasta "LogsSelenium" e as subpastas "Log" e "Printscreen"
 
 **************************
 Passo a passo do projeto
@@ -42,3 +46,25 @@ Try catch utilizado para tratar exceções
 Foi ccriado um mapeamento de pageobjects na tela Quiz.
 Foi criado um novo teste para clicar em radio buttons, checkbox e enviar um input na tela de quiz.
 Todos as opções de pergunta da tela Quiz tem método exclusivo para tratamento de erro de encontrar o elemento na tela na PageObject
+
+5. Inclusão do ExtentReport para relatório de execução de testes
+Criação da classe Relatorio.cs e métodos de ação do relatório
+Inclusão do Nuget: ExtentReport (versão 2.41)
+Na classe WebDriver.cs incluir informações do relatório:
+-Criação do construtor
+-Criação de método de log e print final
+Na classe PageObjects.cs:
+-Camada PageObjects recebe o parâmetro do relatório no construtor
+-Ao instanciar uma classe PageObjects será necessário passar "Relatório como parâmetro"
+-Todos os métodos que tem Try catch irão representar um step, assim implementada a gravação de sucesso/falha
+Nos métodos de teste:
+-Chamar método para iniciar a gravação no relatório
+Toda a configuração de relatório fica fora dos métodos de teste, por isso não é vísivel nenhuma mudança.
+
+
+Melhorias futuras:
+- Arquivo de configuração e customização do ExtentReport conforme seu projeto.
+- Método para validar se o diretório do relatório já está criado.
+- DDT
+- Banco de dados
+- ID Dinâmicos

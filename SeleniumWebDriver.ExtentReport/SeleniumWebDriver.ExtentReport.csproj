@@ -41,6 +41,10 @@
       <HintPath>..\packages\NUnit.3.6.1\lib\net45\nunit.framework.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="RelevantCodes.ExtentReports, Version=1.4.9.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\ExtentReports.2.41.0\lib\RelevantCodes.ExtentReports.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Drawing" />
     <Reference Include="WebDriver, Version=3.2.0.0, Culture=neutral, processorArchitecture=MSIL">
@@ -65,8 +69,11 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="PageObjects\QuizResultPageObjects.cs" />
     <Compile Include="PageObjects\QuizStudentPageObjects.cs" />
     <Compile Include="PageObjects\StudentLoginPageObjects.cs" />
+    <Compile Include="SeleniumUteis\Relatorio.cs" />
+    <Compile Include="SeleniumUteis\SeleniumConstantes.cs" />
     <Compile Include="SeleniumUteis\SeleniumUteis.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Tests\TestsTestMoz.cs" />

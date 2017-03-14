@@ -1,8 +1,9 @@
 ﻿using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.PageObjects;
+using SeleniumWebDriver.ExtentReport.SeleniumUteis;
 
-namespace SeleniumWebDriver.Basics
+namespace SeleniumWebDriver.ExtentReport
 {
     //modificador de acesso public
     public class QuizStudentPageObjects : WebDriver
@@ -10,8 +11,9 @@ namespace SeleniumWebDriver.Basics
         //Tela mapeada: https://testmoz.com/1
 
         //Método construtor para inicializar os elementos
-        public QuizStudentPageObjects()
+        public QuizStudentPageObjects(Relatorio relatorio)
         {
+            Relatorio = relatorio;
             PageFactory.InitElements(WebDriver.driver, this);
         }
 
@@ -73,9 +75,11 @@ namespace SeleniumWebDriver.Basics
             {
                 SeleniumUteis.SeleniumUteis.esperarElemento(question1Radio1);
                 question1Radio1.Click();
+                Relatorio.gravarLogPass("Questão 1 - opção 1 selecionada.");
             }
             catch
             {
+                Relatorio.gravarLogFail("Não foi possível selecionar Questão 1 - opção 1.");
                 Assert.Fail();
             }
         }//fim void
@@ -85,11 +89,14 @@ namespace SeleniumWebDriver.Basics
         {
             try
             {
+
                 SeleniumUteis.SeleniumUteis.esperarElemento(question1Radio2);
                 question1Radio2.Click();
+                Relatorio.gravarLogPass("Questão 1 - opção 2 selecionada.");
             }
             catch
             {
+                Relatorio.gravarLogFail("Não foi possível selecionar Questão 1 - opção 2.");
                 Assert.Fail();
             }
         }//fim void
@@ -101,9 +108,11 @@ namespace SeleniumWebDriver.Basics
             {
                 SeleniumUteis.SeleniumUteis.esperarElemento(question1Radio3);
                 question1Radio3.Click();
+                Relatorio.gravarLogPass("Questão 1 - opção 3 selecionada.");
             }
             catch
             {
+                Relatorio.gravarLogFail("Não foi possível selecionar Questão 1 - opção 3.");
                 Assert.Fail();
             }
         }//fim void
@@ -115,9 +124,11 @@ namespace SeleniumWebDriver.Basics
             {
                 SeleniumUteis.SeleniumUteis.esperarElemento(question1Radio4);
                 question1Radio4.Click();
+                Relatorio.gravarLogPass("Questão 1 - opção 4 selecionada.");
             }
             catch
             {
+                Relatorio.gravarLogFail("Não foi possível selecionar Questão 1 - opção 4.");
                 Assert.Fail();
             }
         }//fim void
@@ -130,9 +141,11 @@ namespace SeleniumWebDriver.Basics
             {
                 SeleniumUteis.SeleniumUteis.esperarElemento(question2Radio1);
                 question2Radio1.Click();
+                Relatorio.gravarLogPass("Questão 2 - opção 1 selecionada.");
             }
             catch
             {
+                Relatorio.gravarLogFail("Não foi possível selecionar Questão 2 - opção 1.");
                 Assert.Fail();
             }
         }//fim void
@@ -143,9 +156,11 @@ namespace SeleniumWebDriver.Basics
             {
                 SeleniumUteis.SeleniumUteis.esperarElemento(question2Radio2);
                 question2Radio2.Click();
+                Relatorio.gravarLogPass("Questão 2 - opção 2 selecionada.");
             }
             catch
             {
+                Relatorio.gravarLogFail("Não foi possível selecionar Questão 2 - opção 2.");
                 Assert.Fail();
             }
         }//fim void
@@ -158,9 +173,11 @@ namespace SeleniumWebDriver.Basics
             {
                 SeleniumUteis.SeleniumUteis.esperarElemento(question3Check1);
                 question3Check1.Click();
+                Relatorio.gravarLogPass("Questão 3 - opção 1 selecionada.");
             }
             catch
             {
+                Relatorio.gravarLogFail("Não foi possível selecionar Questão 3 - opção 1.");
                 Assert.Fail();
             }
         }//fim void
@@ -171,9 +188,11 @@ namespace SeleniumWebDriver.Basics
             {
                 SeleniumUteis.SeleniumUteis.esperarElemento(question3Check2);
                 question3Check2.Click();
+                Relatorio.gravarLogPass("Questão 3 - opção 2 selecionada.");
             }
             catch
             {
+                Relatorio.gravarLogFail("Não foi possível selecionar Questão 3 - opção 2.");
                 Assert.Fail();
             }
         }//fim void
@@ -184,9 +203,11 @@ namespace SeleniumWebDriver.Basics
             {
                 SeleniumUteis.SeleniumUteis.esperarElemento(question3Check3);
                 question3Check3.Click();
+                Relatorio.gravarLogPass("Questão 3 - opção 3 selecionada.");
             }
             catch
             {
+                Relatorio.gravarLogFail("Não foi possível selecionar Questão 3 - opção 3.");
                 Assert.Fail();
             }
         }//fim void
@@ -197,9 +218,11 @@ namespace SeleniumWebDriver.Basics
             {
                 SeleniumUteis.SeleniumUteis.esperarElemento(question3Check4);
                 question3Check4.Click();
+                Relatorio.gravarLogPass("Questão 3 - opção 4 selecionada.");
             }
             catch
             {
+                Relatorio.gravarLogFail("Não foi possível selecionar Questão 3 - opção 4.");
                 Assert.Fail();
             }
         }//fim void
@@ -213,9 +236,11 @@ namespace SeleniumWebDriver.Basics
                 SeleniumUteis.SeleniumUteis.esperarElemento(question4Input);
                 question4Input.Clear();
                 question4Input.SendKeys(valor);
+                Relatorio.gravarLogPass("Questão 4 preenchida.");
             }
             catch
             {
+                Relatorio.gravarLogFail("Não foi possível preencher a Questão 4.");
                 Assert.Fail();
             }
         }//fim void
@@ -227,9 +252,11 @@ namespace SeleniumWebDriver.Basics
             {
                 SeleniumUteis.SeleniumUteis.esperarElemento(btnSubmit);
                 btnSubmit.Click();
+                Relatorio.gravarLogPass("Botão Submit clicado.");
             }
             catch
             {
+                Relatorio.gravarLogFail("Não foi possível clicar no botão Submit.");
                 Assert.Fail();
             }
         }//fim void

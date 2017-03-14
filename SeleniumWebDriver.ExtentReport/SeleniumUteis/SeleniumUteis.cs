@@ -5,7 +5,7 @@ using System;
 using System.IO;
 using System.Reflection;
 
-namespace SeleniumWebDriver.Basics.SeleniumUteis
+namespace SeleniumWebDriver.ExtentReport.SeleniumUteis
 {
     public class SeleniumUteis
     {
@@ -35,7 +35,7 @@ namespace SeleniumWebDriver.Basics.SeleniumUteis
         public static void esperarElemento(IWebElement elemento)
         {
             //Ajuste provisório no método SeleniumBase ->  WebDriver
-            WebDriverWait espera = new WebDriverWait(WebDriver.driver, TimeSpan.FromSeconds(100));
+            WebDriverWait espera = new WebDriverWait(WebDriver.driver, TimeSpan.FromSeconds(50));
             espera.Until(ExpectedConditions.ElementToBeClickable(elemento));
             //Tenta validar se o elemento está clicavel
             try

@@ -1,17 +1,25 @@
 ﻿using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.PageObjects;
+using SeleniumWebDriver.ExtentReport;
+using SeleniumWebDriver.ExtentReport.SeleniumUteis;
 
-namespace SeleniumWebDriver.Basics
+namespace SeleniumWebDriver.ExtentReport
 {
     //modificador de acesso public
     public class StudentLoginPageObjects : WebDriver
     {
         //Tela mapeada: https://testmoz.com/1
+        /// <summary>
+        ///  Método construtor para inicializar os elementos
+        ///  Parâmetro enviado:  relatorio
+        ///  Motivo do parâmetro: utilizar o mesmo objeto em todas as classes para gravar no relatório
+        ///  Variável dentro do construtor
+        /// </summary>
 
-        //Método construtor para inicializar os elementos
-        public StudentLoginPageObjects()
+        public StudentLoginPageObjects(Relatorio relatorio)
         {
+            Relatorio = relatorio;
             PageFactory.InitElements(WebDriver.driver, this);
         }
 
@@ -44,9 +52,11 @@ namespace SeleniumWebDriver.Basics
                 SeleniumUteis.SeleniumUteis.esperarElemento(inputYourName);
                 inputYourName.Clear();
                 inputYourName.SendKeys(YourName);
+                Relatorio.gravarLogPass("Campo YourName preenchido.");
             }
             catch
             {
+                Relatorio.gravarLogFail("Não foi possível preencher o campo YourName.");
                 Assert.Fail();
             }
         }//fim void
@@ -59,9 +69,11 @@ namespace SeleniumWebDriver.Basics
             {
                 SeleniumUteis.SeleniumUteis.esperarElemento(btnContinue);
                 btnContinue.Click();
+                Relatorio.gravarLogPass("Botão Continue clicado.");
             }
             catch
             {
+                Relatorio.gravarLogFail("Não foi possível clicar no botão.");
                 Assert.Fail();
             }
         }//fim void
