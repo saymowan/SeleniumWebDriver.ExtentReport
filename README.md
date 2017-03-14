@@ -15,11 +15,11 @@ Tecnologias escolhidas:
 
 ### Arquitetura do projeto:
 
-Classe filha -> Classe mãe herdada
-Classe de Teste -> WebDriver
-Classe de PageObject -> WebDriver
-Classe Selenium Uteis: métodos genéricos
-Classe Selenium Constantes: parâmetros do projeto
+- Classe filha -> Classe mãe herdada
+- Classe de Teste -> WebDriver
+- Classe de PageObject -> WebDriver
+- Classe Selenium Uteis: métodos genéricos
+- Classe Selenium Constantes: parâmetros do projeto
 
 ### Features:
 
@@ -33,8 +33,8 @@ Inclusão do relatório de execução de testes com evidências passo a passo
 
 ### Pré-requisitos:
 
-Para evitar problemas de exibição dos testes na tela Test Explorer pós build, instale o NuGet: NUnit3TestAdapter
-Crie no diretório físico "C" a pasta "LogsSelenium" e as subpastas "Log" e "Printscreen"
+- Para evitar problemas de exibição dos testes na tela Test Explorer pós build, instale o NuGet: NUnit3TestAdapter
+- Crie no diretório físico "C" a pasta "LogsSelenium" e as subpastas "Log" e "Printscreen"
 
 **************************
 ### Passo a passo do projeto
