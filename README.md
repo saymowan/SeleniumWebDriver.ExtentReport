@@ -56,15 +56,15 @@ Inclusão do relatório de execução de testes com evidências passo a passo
 ### 5. Inclusão do ExtentReport para relatório de execução de testes
 * Criação da classe Relatorio.cs e métodos de ação do relatório
 * Inclusão do Nuget: ExtentReport (versão 2.41)
-* Na classe WebDriver.cs incluir informações do relatório:
-** Criação do construtor
-** Criação de método de log e print final
-* Na classe PageObjects.cs:
-** Camada PageObjects recebe o parâmetro do relatório no construtor.
-** Ao instanciar uma classe PageObjects será necessário passar "Relatório como parâmetro"
-** Todos os métodos que tem Try catch irão representar um step, assim implementada a gravação de sucesso/falha
-* Nos métodos de teste:
-** Chamar método para iniciar a gravação no relatório
+Na classe WebDriver.cs incluir informações do relatório:
+* Criação do construtor
+* Criação de método de log e print final
+Na classe PageObjects.cs:
+* Camada PageObjects recebe o parâmetro do relatório no construtor.
+* Ao instanciar uma classe PageObjects será necessário passar "Relatório como parâmetro"
+* Todos os métodos que tem Try catch irão representar um step, assim implementada a gravação de sucesso/falha
+Nos métodos de teste:
+* Chamar método para iniciar a gravação no relatório
 * Toda a configuração de relatório fica fora dos métodos de teste, por isso não é vísivel nenhuma mudança.
 
 ### Exemplo de relatório de execução de testes:
